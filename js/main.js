@@ -2,7 +2,8 @@
 let stackedBar,
     positionChart,
     bodyInjury,
-    lineChart;
+    lineChart,
+    barVis;
 
 
 d3.csv("data/dataset0.csv")
@@ -23,7 +24,8 @@ function initMainPage(data) {
     stackedBar = new StackedBar("stacked-bar", data);
     positionChart = new PositionChart("positionDiv", data);
     bodyInjury = new bodyparts ("body", "bodyInfo", data);
-    lineChart = new LineChart("line-chart", data);
+    lineChart = new LineChart("pos-line-chart", data);
+    barVis = new BarVis("pos-bar-chart", data);
 
     new fullpage('#fullpage', {
         allowScrolling: false,

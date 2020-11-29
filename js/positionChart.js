@@ -18,7 +18,6 @@ class PositionChart {
             "Multiple", "Neck", "Oblique", "Other", "Pectoral", "Quadricep", "Rib", "Shin", "Shoulder",
             "Thigh", "Thumb", "Toe", "Tricep", "Wrist"];
         this.years = [2016, 2017, 2018, 2019, 2020];
-        this.positions = ["DB", "DE", "DT", "LB", "WR", "TE", "OT", "OG", "C", "QB", "RB", "K", "P"]
 
         this.initVis();
     }
@@ -78,7 +77,7 @@ class PositionChart {
     updateVis() {
         let vis = this;
         let dPositions = [["DB", 40, 5], ["DB", 60, 5], ["DB", 5, 33], ["DB", 95, 33], ["DB", 15, 35], ["DB", 85, 35],
-                         ["DE", 30, 40], ["DE", 70, 40], ["DT", 40, 40], ["DT", 60, 40], ["LB", 50, 35]];
+                         ["DE", 30, 40], ["DE", 70, 40], ["DT", 40, 40], ["DT", 60, 40], ["LB", 50, 35], ["ALL", 5, 5]];
         let oPositions = [["WR", 5, 70], ["WR", 95, 70], ["TE", 15, 60], ["OT", 30, 60], ["OT", 70, 60],
                           ["OG", 40, 60], ["OG", 60, 60], ["C", 50, 60], ["QB", 50, 75], ["RB", 45, 83],
                           ["K", 80, 85], ["P", 90, 85]];
@@ -150,16 +149,7 @@ class PositionChart {
             .attr('stroke-width', 3);
     }
     updateTable(pos) {
-        let vis = this;
-        console.log(pos);
-        d3.select("#positionName").text(pos);
-        vis.yearData[pos].forEach((datum, i) => {
-            d3.select("#year" + i).text(datum[1]);
-        })
-        for (let i = 0; i < 3; i++) {
-            let datum = vis.injuryData[pos][i];
-            d3.select("#injuryName" + i).text(datum[0]);
-            d3.select("#injuryVal" + i).text(datum[1]);
-        }
+        lineChart.filterData(pos);
+        barVis.filterData(pos);
     }
 }

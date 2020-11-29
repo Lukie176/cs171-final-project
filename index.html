@@ -125,63 +125,8 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="row justify-content-center">
-                    <h2 id="positionName">Position</h2>
-                    <hr width="100%"/>
-                    <h4>Injuries by Year</h4>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Year</th>
-                            <th scope="col">Injuries up to Week 9</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">2016</th>
-                            <td id="year0"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2017</th>
-                            <td id="year1"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2018</th>
-                            <td id="year2"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2019</th>
-                            <td id="year3"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020</th>
-                            <td id="year4"></td>
-                        </tr>
-                    </table>
-                    <h4>Top 3 Injury Types</h4>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Injury Type</th>
-                            <th scope="col">Injuries up to Week 9</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row" id="injuryName0"></th>
-                            <td id="injuryVal0"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" id="injuryName1"></th>
-                            <td id="injuryVal1"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" id="injuryName2"></th>
-                            <td id="injuryVal2"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="row" id="pos-line-chart"></div>
+                <div class="row" id="pos-bar-chart"></div>
             </div>
         </div>
     </div>
@@ -199,7 +144,7 @@
     </div>
 
 
-    <div class="text section">
+    <div class="text section">pos-line-chart
         <p> To help you better explore how different positions, teams, and other determinants are impacted by injury, feel free to also explore the below interactive visualization.
         </p>
     </div>
@@ -232,6 +177,7 @@
 <script src="js/positionChart.js"></script>
 <script src="js/body.js"></script>
 <script src="js/lineChart.js"></script>
+<script src="js/barVis.js"></script>
 
 <!-- Load data, create visualizations -->
 <script src="js/main.js"></script>

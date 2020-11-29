@@ -22,7 +22,7 @@ h2 {
 
 #positionDiv {
     width: 100%;
-    height: 500px;
+    height: 700px;
 }
 
 .background{
@@ -37,4 +37,8 @@ h2 {
 #stacked-bar-sidebar {
     align-self: center;
     text-align: center
+}
+#pos-line-chart, #pos-bar-chart {
+    height: 50%;
+    width: 100%;
 }
