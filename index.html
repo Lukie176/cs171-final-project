@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS171 - Final Project</title>
+
+    <!-- Load CSS libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fullpage.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="padding: 5vh">
+<div id="fullpage">
+
+
+    <div class="section">
+        <div class="title">
+            <h1>Ready. Set. Hike.</h1>
+            <h2>A look into the risk factors of injuries in the NFL.</h2>
+        </div>
+    </div>
+
+
+    <div class="text section">
+        <p>Just as any other NFL Football season, avid football fans across the nation have continued to cheer their favorite teams into the endzone. Despite the incredible plays, Fantasy Football managers have no doubt noticed several high profile players, such as Dak Prescott, Christian McCaffrey, and Nick Chubb become sidelined due to injury. While many would be quick to blame these injuries on this year’s unorthodox conditions, let's take a look at how this year's injuries, from Week 1 to Week 9, compare to past year's.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="row">
+            <div class="col-9" id="stacked-bar"></div>
+            <div class="col-3" id="stacked-bar-sidebar">
+                <p>Hover your mouse over the bars to see the number of times that injury appeared on injury reports of that year. You can also filter by injury using the dropdown below.</p>
+                <select name="injury" id="injury" onchange="changedFilter()">
+                    <option value="All">All Injury Types</option>
+                    <option value="Abdomen">Abdomen</option>
+                    <option value="Achilles">Achilles</option>
+                    <option value="Ankle">Ankle</option>
+                    <option value="Back">Back</option>
+                    <option value="Biceps">Biceps</option>
+                    <option value="Calf">Calf</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Concussion">Concussion</option>
+                    <option value="Elbow">Elbow</option>
+                    <option value="Fibula">Fibula</option>
+                    <option value="Finger">Finger</option>
+                    <option value="Foot">Foot</option>
+                    <option value="Forearm">Forearm</option>
+                    <option value="Groin">Groin</option>
+                    <option value="Hamstring">Hamstring</option>
+                    <option value="Hand">Hand</option>
+                    <option value="Heel">Heel</option>
+                    <option value="Hip">Hip</option>
+                    <option value="Illness">Illness</option>
+                    <option value="Knee">Knee</option>
+                    <option value="Multiple">Multiple</option>
+                    <option value="Neck">Neck</option>
+                    <option value="Oblique">Oblique</option>
+                    <option value="Other">Other</option>
+                    <option value="Pectoral">Pectoral</option>
+                    <option value="Quadricep">Quadricep</option>
+                    <option value="Rib">Rib</option>
+                    <option value="Shin">Shin</option>
+                    <option value="Shoulder">Shoulder</option>
+                    <option value="Thigh">Thigh</option>
+                    <option value="Thumb">Thumb</option>
+                    <option value="Toe">Toe</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Wrist">Wrist</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text section">
+        <p> One might be quick to assume that injuries in this season would be noticeably higher due to a lack of preseason training and preparation. However, the data indicates that this season's total injuries are consistent with previous years. While the prevalence of injuries hasn't risen, football is still one of the most injury prone sports. As players are carted off the field and fans are left heartbroken (whether that is out of concern for the player or knowing that he won’t be making you fantasy points anytime soon), it’s important that we broaden our understanding as fans of this sport, especially when it comes to the well-being of players we have come to know, love, and cheer for.
+        </p>
+    </div>
+
+    <div class="text section">
+        <p> At first glance, we can see right away that NFL players injure almost every part of the body. However, some injuries occur more often than others. Below, you can see a breakdown of injuries for this season by body part.
+        </p>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col-6">
+                <div class="row justify-content-center" style="height: 100%">
+                    <div id="body" class="align-self-center background">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row justify-content-center" style="height: 100%">
+                    <div id="bodyInfo" class="align-self-center">
+                        <p>To be filled with table for injury data related to the body part.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text section">
+        <p>While some positions tend to be more publicised than others, it's also important to understand that the
+            risk of injury isn't equitable across positions. We invite you to see the visualization below and click on
+            positions that interest you. You will be given a breakdown of that position's injuries over the years and
+            the most common injuries they have suffered this past year.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <div class="row">
+            <div class="col-6">
+                <div class="row justify-content-center" style="height: 100%">
+                    <div id="positionDiv"></div>
+                    <p>*This football lineup is used for illustrative purposes only.</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row justify-content-center">
+                    <h2 id="positionName">Position</h2>
+                    <hr width="100%"/>
+                    <h4>Injuries by Year</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Year</th>
+                            <th scope="col">Injuries up to Week 9</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">2016</th>
+                            <td id="year0"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2017</th>
+                            <td id="year1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2018</th>
+                            <td id="year2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2019</th>
+                            <td id="year3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2020</th>
+                            <td id="year4"></td>
+                        </tr>
+                    </table>
+                    <h4>Top 3 Injury Types</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Injury Type</th>
+                            <th scope="col">Injuries up to Week 9</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row" id="injuryName0"></th>
+                            <td id="injuryVal0"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="injuryName1"></th>
+                            <td id="injuryVal1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="injuryName2"></th>
+                            <td id="injuryVal2"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text section">
+        <p> Whether you’re born to a dynasty of Vikings fans or are just breaking into your love for the Steelers, different teams also carry different risks of injury. Differences can be partially explained by different playbooks that teams live by, but by looking at injuries by team, we can at least see where the most risk lies.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <img src="img/map.svg" width="900px" alt="US Map">
+        <p> Cities with NFL teams will have the corresponding logo. The logo will hoverable to see details about that team and the number of injuries it typically sees.</p>
+    </div>
+
+
+    <div class="text section">
+        <p> To help you better explore how different positions, teams, and other determinants are impacted by injury, feel free to also explore the below interactive visualization.
+        </p>
+    </div>
+
+    <div class="section">
+        <img src="img/dotvis.png" width="900px" alt="US Map">
+        <p> The circles will be hoverable to see what player it corresponds to. There will be a filter by year, position, and by team.</p>
+    </div>
+
+    <div class="text section">
+        <p> With a broader understanding of the risk that these players take on, as well as which positions and teams are more likely to be injured, draft wisely, and be mindful of what is at stake when tackles are made and routes are run. Football is an exhilarating sport to watch, but the enjoyment isn’t without a cost.
+        </p>
+    </div>
+</div>
+
+
+<!-- embedding JS libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Fullpage.js -->
+<script src="js/fullpage.min.js"></script>
+
+<!-- Visualization objects -->
+<script src="js/stackedBar.js"></script>
+<script src="js/positionChart.js"></script>
+<script src="js/body.js"></script>
+<script src="js/lineChart.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="js/main.js"></script>
+</body>
+</html>
