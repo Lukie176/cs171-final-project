@@ -16,6 +16,7 @@ https://lukie176.github.io/cs171-final-project/
 
 ### Data Sources
 Dataset 1: https://www.footballdb.com/transactions/injuries.html
+
 Dataset 2: https://www.vegasinsider.com/nfl/injuries/
 
 ### External References
