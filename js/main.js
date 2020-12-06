@@ -3,7 +3,8 @@ let stackedBar,
     positionChart,
     bodyInjury,
     lineChart,
-    barVis;
+    barVis,
+    mapVis;
 
 
 d3.csv("data/dataset0.csv")
@@ -16,10 +17,6 @@ d3.csv("data/dataset0.csv")
     });
 
 function initMainPage(data) {
-
-    // log data
-    console.log(data)
-
     // Instantiate visualization object (bike-sharing stations in Boston)
     stackedBar = new StackedBar("stacked-bar", data);
     positionChart = new PositionChart("positionDiv", data);
@@ -35,8 +32,13 @@ function initMainPage(data) {
     });
 }
 
+d3.json("data/us-states.json").then(json => {
+    d3.csv("data/nflData.csv").then(data => {
+        mapVis = new MapVis("mapVis", data, json);
+    })
+})
+
 function changedFilter() {
     let selection = document.getElementById("injury").value;
     stackedBar.selectionChanged(selection);
 }
-

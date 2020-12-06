@@ -1,0 +1,33 @@
+rank,team,place,population,lat,lon,img,total,2016,2017,2018,2019,2020,r20,r2019,r2018,r2017,r2016,rtotal
+1,Las Vegas Raiders,Allegiant Stadium,0,36.96220772482764, -116.60009488721026,https://cdn.shopify.com/s/files/1/1949/1233/products/Las_Vegas_Raiders_circle.png?v=1575428277,381,62,73,77,72,97,5-3,4-4,1-7,4-5,7-2,21-21
+2,Kansas City Chiefs,Arrowhead Stadium,0,39.0489387,-94.48398375,https://cdn.shopify.com/s/files/1/1949/1233/products/KC_Chiefs_circle_1024x1024.png?v=1544328561,362,55,63,71,89,84,8-1,6-3,8-1,6-3,6-2,34-10
+3,Dallas Cowboys,AT&T Stadium,0,32.004244080824364, -102.09305751174423,https://cdn.shopify.com/s/files/1/1949/1233/products/Dallas_Cowboys_circle_1024x1024.png?v=1544325812,344,75,65,73,94,36,2-7,5-3,3-5,5-3,7-1,22-19
+4,Carolina Panthers,Bank of America Stadium,0,36.67419658670927, -79.87581147114349,https://i.ibb.co/dQ8KnG9/pixlr-bg-result-copy-5.png,357,56,98,47,72,84,3-6,5-3,6-2,6-3,3-5,23-19
+5,Buffalo Bills,Bills Stadium,0,44.198774810560884,-79.12169828032023,https://i.ibb.co/w4y4Bw4/pixlr-bg-result-copy-4.png,360,97,69,46,59,91,7-2,6-2,2-7,5-3,3-5,24-19
+6,Denver Broncos,Empower Field at Mile High,0,39.743952,-105.01922281,https://i.ibb.co/7k8vtcH/pixlr-bg-result-copy-3.png,402,95,64,87,74,82,3-4,3-6,3-6,3-5,6-3,18-24
+7,Washington Football Team,FedExField,0,38.907778,-76.864444,https://sportslogohistory.com/wp-content/uploads/2020/08/washington_football_team_2020-pres_a.png,432,87,97,97,93,58,2-6,1-8,5-3,4-4,4-3-1,16-24-1
+8,Cleveland Browns,FirstEnergy Stadium,0,41.90245288511795, -84.03939000289238,https://i.ibb.co/27F3Jjz/pixlr-bg-result-copy-2.png,441,92,87,82,77,103,5-3,2-6,2-6-1,0-8,0-8,9-24-1
+9,Detroit Lions,Ford Field,0,44.74068324620877, -85.57994543845133,https://cdn.shopify.com/s/files/1/1949/1233/products/Detroit_Lions_circle_1024x1024.png?v=1575428276,309,79,62,52,55,61,3-5,3-4-1,3-5,4-4,5-4,19-22-1
+10,New England Patriots,Gillette Stadium,0,43.414499036960486,-73.26311968578648,https://cdn.shopify.com/s/files/1/1949/1233/products/NE_Patriots_circle_1024x1024.png?v=1575428277,392,80,77,94,65,76,3-5,8-1,7-2,6-2,7-1,31-11
+11,Miami Dolphins,Hard Rock Stadium,0,26.60725969767225,-81.85289984664519,https://cdn.shopify.com/s/files/1/1949/1233/products/Miami_Dolphins_circle_1024x1024.png?v=1575428277,414,72,71,104,91,78,5-3,1-7,5-4,4-4,4-4,19-22
+12,Pittsburgh Steelers,Heinz Field,0,42.20657038623508, -80.71033800431694,https://cdn.shopify.com/s/files/1/1949/1233/products/Pittsburgh_Steelers_circle.png?v=1575428277,283,76,51,42,60,53,8-0,4-4,5-2-1,6-2,4-4,27-12-1
+13,Green Bay Packers,Lambeau Field,0,47.012826020712005, -92.39538403932454,https://i.ibb.co/BqCMpFh/pixlr-bg-result-copy-8.png,476,70,86,67,147,107,6-2,7-2,3-4-1,4-4,4-4,24-16-1
+14,San Francisco 49ers,Levi's Stadium,0,40.05249661498793, -124.65726091942942,https://i.ibb.co/NVqSDYh/pixlr-bg-result-copy-7.png,395,88,74,99,63,71,4-5,8-0,2-7,0-9,1-7,15-28
+15,Philadelphia Eagles,Lincoln Financial Field,0,41.24243037579105, -77.01469509798441,https://cdn.shopify.com/s/files/1/1949/1233/products/Phil_Eagles_Circle_PR.png?v=1575428276,351,47,78,65,81,80,3-4-1,5-4,4-4,8-1,4-4,24-17-1
+16,Indianapolis Colts,Lucas Oil Stadium,0,40.41672342912471,-86.88259396115343,https://i.ibb.co/z4t4wxQ/pixlr-bg-result-copy.png,421,108,88,99,73,53,5-3,5-3,3-5,3-6,4-5,20-22
+17,Seattle Seahawks,Lumen Field,0,47.5953459,-122.33164431,https://i.ibb.co/9VLRQhS/pixlr-bg-result.png,461,75,79,88,97,122,6-2,7-2,4-4,5-3,5-2-1,27-13-1
+18,Baltimore Ravens,M&T Bank Stadium,0,40.02243582286747, -78.37304775073488,https://i.ibb.co/vw6H9Qf/pixlr-bg-result-copy-6.png,332,68,93,69,45,53,6-2,6-2,4-5,4-5,4-4,24-19
+19,Atlanta Falcons,Mercedes-Benz Stadium,0,33.75539625,-84.40081567,https://cdn.shopify.com/s/files/1/1949/1233/products/Atlanta_Falcons_circle_PR.png?v=1575428276,336,73,56,65,54,88,3-6,1-7,4-4,4-4,6-3,18-24
+20,New Orleans Saints,Mercedes-Benz Superdome,0,30.182303002637575, -92.09247311726125,https://img.pngio.com/new-orleans-saints-circle-logo-vinyl-dec-802180-png-images-pngio-new-orleans-saints-logo-png-1024_1020.png,266,64,41,53,51,57,6-2,7-1,7-1,6-1,4-4,30-10
+21,New York Giants,MetLife Stadium,0,43.23062554779468,-75.50191378768315,https://cdn.shopify.com/s/files/1/1949/1233/products/New_York_Giants_circle.png?v=1575428277,276,59,69,48,58,42,2-7,2-7,1-7,1-7,5-3,11-31
+22,Tennessee Titans,Nissan Stadium,0,36.16649655,-86.77126444,https://cdn.shopify.com/s/files/1/1949/1233/products/Tennessee_Titans_circle.png?v=1575428277,287,40,39,62,71,69,6-2,4-5,4-4,5-3,4-5,23-19
+23,Houston Texans,NRG Stadium,0,30.2857502298888,-97.73624504777713,https://cdn.shopify.com/s/files/1/1949/1233/products/Houston_Texans_circle_1024x1024.png?v=1575428276,487,102,114,116,97,58,2-6,6-3,6-3,3-5,5-3,22-20
+24,Cincinnati Bengals,Paul Brown Stadium,0,39.0954645,-84.51604884,https://cdn.shopify.com/s/files/1/1949/1233/products/Cincinnati_Bengals_circle.png?v=1575428276,362,62,79,83,80,57,2-5-1,0-8,5-3,3-5,3-4-1,13-25-2
+25,Tampa Bay Buccaneers,Raymond James Stadium,0,27.97597925,-82.504218,https://cdn.shopify.com/s/files/1/1949/1233/products/Tampa_Bay_Buccaneers_circle_1024x1024.png?v=1575428277,296,51,56,56,68,65,6-3,2-6,3-5,2-6,3-5,16-25
+26,Los Angeles Rams,SoFi Stadium,0,33.95335745,-118.33908643,https://i.ibb.co/P42y2fq/pixlr-bg-result-copy-9.png,163,48,26,36,29,26,5-3,5-3,8-1,6-2,3-5,27-14
+27,Chicago Bears,Soldier Field,0,42.26998005678932,-89.10205048657582,https://cdn.shopify.com/s/files/1/1949/1233/products/Chicago_Bears_circle_1024x1024.png?v=1575428276,316,102,62,37,45,70,5-4,3-5,5-3,3-5,2-6,18-23
+28,Arizona Cardinals,State Farm Stadium,0,33.52770765,-112.2625649,https://cdn.shopify.com/s/files/1/1949/1233/products/AZ_Cardinals_circle_1024x1024.png?v=1575428276,369,78,64,92,81,54,5-3,3-4-1,2-7,4-4,3-4-1,17-22-2
+29,Jacksonville Jaguars,TIAA Bank Field,0,30.454043439368895,-84.28364484404948,https://cdn.shopify.com/s/files/1/1949/1233/products/Jacksonville_Jaguars_circle_1024x1024.png?v=1575428276,367,69,74,76,82,66,1-7,4-5,3-5,5-3,2-6,15-26
+30,Minnesota Vikings,U.S. Bank Stadium,0,45.89286688256235,-95.37836048780748,https://cdn.shopify.com/s/files/1/1949/1233/products/Minnesota_Vikings_circle_1024x1024.png?v=1575428277g,352,85,63,84,73,47,3-5,6-3,5-3-1,6-2,5-3,25-16-1
+31,Los Angeles Chargers,SoFi Stadium,0,36.668792243969726, -121.64128107790694,https://cdn.shopify.com/s/files/1/1949/1233/products/Los_Angeles_Chargers_circle.png?v=1575428277,342,66,55,51,87,83,2-6,4-5,6-2,3-5,4-5,19-23
+32,New York Jets,MetLife Stadium,0,48.11202658093216, -77.32079887228656,https://cdn.shopify.com/s/files/1/1949/1233/products/New_York_Jets_circle_1024x1024.png?v=1575428277,632,122,129,126,145,110,0-9,1-7,3-6,4-5,3-6,11-33

@@ -15,28 +15,35 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
 </head>
 
-<body style="padding: 5vh">
+<body>
 <div id="fullpage">
 
-
-    <div class="section">
-        <div class="title">
+    <div class="section" id="text1Div">
+        <div class="title transparent">
             <h1>Ready. Set. Hike.</h1>
             <h2>A look into the risk factors of injuries in the NFL.</h2>
         </div>
     </div>
 
 
-    <div class="text section">
-        <p>Just as any other NFL Football season, avid football fans across the nation have continued to cheer their favorite teams into the endzone. Despite the incredible plays, Fantasy Football managers have no doubt noticed several high profile players, such as Dak Prescott, Christian McCaffrey, and Nick Chubb become sidelined due to injury. While many would be quick to blame these injuries on this year’s unorthodox conditions, let's take a look at how this year's injuries, from Week 1 to Week 9, compare to past year's.
-        </p>
+    <div class="section" id="text2Div">
+        <div class="text transparent">
+            <p> Just as any other NFL Football season, avid football fans across the nation have continued to cheer their
+                favorite teams into the endzone. Despite the incredible plays, viewers have no doubt noticed several high
+                profile players, such as Dak Prescott, Christian McCaffrey, and Nick Chubb, become sidelined due to
+                injury. Many would be quick to blame these injuries on this year’s unorthodox conditions, so let's take
+                a look at how this year's injuries, from Week 1 to Week 9, compare to past years.
+            </p>
+        </div>
     </div>
 
-    <div class="section">
-        <div class="row">
+    <div class="section visBackground">
+        <div class="row vis transparent">
             <div class="col-9" id="stacked-bar"></div>
             <div class="col-3" id="stacked-bar-sidebar">
-                <p>Hover your mouse over the bars to see the number of times that injury appeared on injury reports of that year. You can also filter by injury using the dropdown below.</p>
+                <p> Notice that this year's overall number of injuries is consistent with past years.</p>
+                <p> Feel free to also explore this visualization. Hover over the bars to see the number of times that
+                    injury appeared on injury reports of that year. Filter by injury using the dropdown below.</p>
                 <select name="injury" id="injury" onchange="changedFilter()">
                     <option value="All">All Injury Types</option>
                     <option value="Abdomen">Abdomen</option>
@@ -79,27 +86,64 @@
     </div>
 
 
-    <div class="text section">
-        <p> One might be quick to assume that injuries in this season would be noticeably higher due to a lack of preseason training and preparation. However, the data indicates that this season's total injuries are consistent with previous years. While the prevalence of injuries hasn't risen, football is still one of the most injury prone sports. As players are carted off the field and fans are left heartbroken (whether that is out of concern for the player or knowing that he won’t be making you fantasy points anytime soon), it’s important that we broaden our understanding as fans of this sport, especially when it comes to the well-being of players we have come to know, love, and cheer for.
-        </p>
+    <div class="section" id="text3Div">
+        <div class="text transparent">
+            <p> NFL viewers might have been quick to assume that injuries in this season would be noticeably higher due to a lack of
+                preseason training and preparation. However, as seen above, this season's total injuries are
+                consistent with previous years. While the prevalence of injuries hasn't risen, football is still one of
+                the most injury prone sports. As players are carted off the field and fans are left heartbroken (whether
+                out of concern for the player or knowing that he won’t be making you fantasy points anytime
+                soon), it’s important that we broaden our understanding as fans of this sport, especially when it comes
+                to the well-being of players we have come to know, love, and cheer for.
+            </p>
+        </div>
     </div>
 
-    <div class="text section">
-        <p> At first glance, we can see right away that NFL players injure almost every part of the body. However, some injuries occur more often than others. Below, you can see a breakdown of injuries for this season by body part.
-        </p>
-    </div>
-    <div class="section">
-        <div class="row">
-            <div class="col-6">
-                <div class="row justify-content-center" style="height: 100%">
-                    <div id="body" class="align-self-center background">
-                    </div>
+    <div class="section visBackground">
+        <div class="row vis transparent" id="bodyDiv">
+            <div class="col-4">
+                <div class="row justify-content-center">
+                    <p> One of the most pertinent factors to understand is that risk of injury is centralized to certain body parts.
+                        At first glance, we can see that NFL players injure almost every part of the body. However,
+                        lower-body injuries, particularly to the knee, ankle, and thigh, are especially prevalent in the NFL.
+                        In this visualization, you can see a breakdown of how many times each injury appeared on past injury reports. Feel free
+                        to click on body parts of interest to see how frequently that body part is injured.
+                    </p>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="row justify-content-center" style="height: 100%">
+            <div class="col-4">
+                <div class="row justify-content-center">
+                    <div id="body"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row justify-content-center">
                     <div id="bodyInfo" class="align-self-center">
-                        <p>To be filled with table for injury data related to the body part.</p>
+                        <h2 id="positionName">Injuries by Body Part</h2>
+                        <hr width="100%"/>
+                        <table class="table">
+                            <thead>
+                            <tr id="toprow">
+                                <th scope="row">Year</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="year2016">
+                                <th scope="row">2016</th>
+                            </tr>
+                            <tr id="year2017">
+                                <th scope="row">2017</th>
+                            </tr>
+                            <tr id="year2018">
+                                <th scope="row">2018</th>
+                            </tr>
+                            <tr id="year2019">
+                                <th scope="row">2019</th>
+                            </tr>
+                            <tr  id="year2020">
+                                <th scope="row">2020</th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -107,56 +151,81 @@
     </div>
 
 
-    <div class="text section">
-        <p>While some positions tend to be more publicised than others, it's also important to understand that the
-            risk of injury isn't equitable across positions. We invite you to see the visualization below and click on
-            positions that interest you. You will be given a breakdown of that position's injuries over the years and
-            the most common injuries they have suffered this past year.
-        </p>
+
+    <div class="section" id="text4Div">
+        <div class="text transparent">
+            <p> In addition to particular body parts, while some positions tend to be more publicised than others, it's
+                also important to understand that the risk of injury isn't equitable across positions. We invite you to
+                interact with the visualization below and learn about positions that interest you.
+            </p>
+        </div>
     </div>
 
 
-    <div class="section">
-        <div class="row">
+    <div class="section visBackground">
+        <div class="row vis transparent">
             <div class="col-6">
-                <div class="row justify-content-center" style="height: 100%">
-                    <div id="positionDiv"></div>
-                    <p>*This football lineup is used for illustrative purposes only.</p>
+                <div class="row" id="positionText">
+                    <p>
+                        Feel free to hover over a position to see that position's name and the most frequently injured
+                        player this year that plays that position. Clicking on a position will give you a breakdown of
+                        that position's injuries by week over this season and the most common injuries they have suffered.
+                    </p>
+                    <p>
+                        As you interact with this visualization, notice that defensive positions seem to take more
+                        punishment and injury than offensive positions, with Defensive Backs having the highest rate of injury.
+                    </p>
                 </div>
+                <div class="row" id="positionDiv"></div>
             </div>
             <div class="col-6">
                 <div class="row" id="pos-line-chart"></div>
                 <div class="row" id="pos-bar-chart"></div>
             </div>
         </div>
+    </div>350,254
+
+
+    <div class="section" id="text5Div">
+        <div class="text transparent">
+            <p> Whether you’re born to a dynasty of Vikings fans or are just breaking into your love for the Steelers,
+                a player's team is also a determinant of injury risk. Differences can be partially explained by different
+                playbooks that teams live by, but by looking at injuries by team, we can at least see where the most risk
+                lies.
+            </p>
+        </div>
     </div>
 
 
-    <div class="text section">
-        <p> Whether you’re born to a dynasty of Vikings fans or are just breaking into your love for the Steelers, different teams also carry different risks of injury. Differences can be partially explained by different playbooks that teams live by, but by looking at injuries by team, we can at least see where the most risk lies.
-        </p>
+    <div class="section visBackground">
+        <div class="vis transparent">
+            <div id="mapVis">
+                <p>
+                    Feel free to click on teams to see how they fare. Notice that the New York Jets have been consistently among the most injury prone teams in the NFL
+                    over the past few years. The Los Angeles Rams, on the other hand, tend to have very few injuries on
+                    their weekly injury reports.
+                </p>
+                <select id="selectButton"></select>
+            </div>
+        </div>
     </div>
 
 
-    <div class="section">
-        <img src="img/map.svg" width="900px" alt="US Map">
-        <p> Cities with NFL teams will have the corresponding logo. The logo will hoverable to see details about that team and the number of injuries it typically sees.</p>
-    </div>
+    <div class="section" id="text6Div">
+        <div class="text transparent">
+            <p> Throughout these visualizations, we've revealed that total injuries this year are consistent with past
+                years, lower-body injuries are the most prevalent type of injury, defensive positions have the most risk
+                of injury, and the New York Jets are consistently a highly injured team.</p>
 
+            <p> With a broader understanding of the risk that these players take on, as well as the many determinants
+                of injury, we encourage you to be mindful of what is at stake when tackles are made and routes are run.
+                Football is an exhilarating sport to watch, but the enjoyment isn’t without a cost.</p>
 
-    <div class="text section">pos-line-chart
-        <p> To help you better explore how different positions, teams, and other determinants are impacted by injury, feel free to also explore the below interactive visualization.
-        </p>
-    </div>
-
-    <div class="section">
-        <img src="img/dotvis.png" width="900px" alt="US Map">
-        <p> The circles will be hoverable to see what player it corresponds to. There will be a filter by year, position, and by team.</p>
-    </div>
-
-    <div class="text section">
-        <p> With a broader understanding of the risk that these players take on, as well as which positions and teams are more likely to be injured, draft wisely, and be mindful of what is at stake when tackles are made and routes are run. Football is an exhilarating sport to watch, but the enjoyment isn’t without a cost.
-        </p>
+            <p> As such, we invite you to explore the resources put forth by the <a href="https://nflpa.com/">NFL Players Association</a> and the
+                <a href="https://www.atyourownrisk.org/">National Athletic Trainers Association</a>, two organizations leading the charge in developing NFL safety
+                precautions.
+            </p>
+        </div>
     </div>
 </div>
 
@@ -178,6 +247,7 @@
 <script src="js/body.js"></script>
 <script src="js/lineChart.js"></script>
 <script src="js/barVis.js"></script>
+<script src="js/mapVis.js"></script>
 
 <!-- Load data, create visualizations -->
 <script src="js/main.js"></script>

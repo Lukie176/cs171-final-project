@@ -32,7 +32,7 @@ class StackedBar {
 	initVis () {
 		let vis = this;
 
-		vis.margin = {top: 40, right: 100, bottom: 40, left: 40};
+		vis.margin = {top: 40, right: 100, bottom: 40, left: 60};
 		vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
 		vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
@@ -47,10 +47,21 @@ class StackedBar {
 		vis.svg.append('g')
 			.attr('class', 'title bar-title')
 			.append('text')
-			.attr('transform', `translate(${vis.width / 2}, 10)`)
+			.attr('transform', `translate(${vis.width / 2}, 5)`)
 			.attr('text-anchor', 'middle')
 			.text('Prevalence of Injuries by Year');
-
+		vis.svg
+			.append('text')
+			.attr('class', 'title bar-title')
+			.attr('transform', `translate(${(vis.width  - vis.margin.right) / 2}, ${vis.height + 40})`)
+			.attr('text-anchor', 'middle')
+			.text('Year');
+		vis.svg
+			.append('text')
+			.attr('class', 'title bar-title')
+			.attr('text-anchor', 'middle')
+			.attr('transform', `translate(-40, ${vis.height / 2}) rotate(270)`)
+			.text('Appearances on Injury Report');
 		// Scales and axes
 		vis.x = d3.scaleBand()
 			.domain(vis.years)
@@ -84,7 +95,6 @@ class StackedBar {
 			.attr("transform", "translate(0, " + vis.height + ")")
 		vis.svg.append("g")
 			.attr("class", "y-axis axis")
-
 		vis.legendGroup = vis.svg.append("g")
 			.attr("class", "legend")
 			.attr("transform", "translate(" + (vis.width - 2 * vis.margin.right + 50) + ",0)")
@@ -115,7 +125,7 @@ class StackedBar {
 		if (vis.displayData.length === vis.data.length){
 			filteredData.forEach(yearData => {
 				vis.categories.forEach(category => {
-					if (yearData[category] < 50 && category !== "Other") {
+					if (yearData[category] < 55 && category !== "Other") {
 						yearData["Other"] += yearData[category]
 						yearData[category] = 0
 					}
@@ -128,14 +138,13 @@ class StackedBar {
 			vis.usedCats.add(vis.selection)
 		}
 
-		vis.usedCats = Array.from(vis.usedCats)
+		vis.usedCats = Array.from(vis.usedCats).sort()
 
 		vis.stackData = d3.stack()
 			.keys(vis.categories)(filteredData)
 		if (vis.displayData.length === vis.data.length) {
 			vis.color.domain(vis.usedCats);
 		}
-
 
 		// Update the visualization
 		vis.updateVis();
@@ -160,21 +169,34 @@ class StackedBar {
 				.attr("y", d => vis.y(d[1]))
 				.attr("height", d => vis.y(d[0]) - vis.y([d[1]]))
 				.attr("width", vis.x.bandwidth)
-				.attr("fill", d => vis.color(cat))
+				.attr("fill", vis.color(cat))
 				.on("mouseover", (event, d) => {
-					vis.tooltip.style("display", null)
-				})
-				.on("mouseout", function () {
-					vis.tooltip.style("display", "none");
-				})
-				.on("mousemove", (event, d) => {
-					let xPosition = event.pageX - 150;
-					let yPosition = event.pageY - 350;
-					vis.tooltip.style("opacity",1)
-					vis.tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-					vis.tooltip.select("#text1").text("Type: " + cat)
+					vis.tooltip
+						.style("display", null)
+						.style("opacity",1)
+						.attr("transform", `translate( ${vis.x(d.data.year) + vis.x.bandwidth() / 2 - 50} , ${vis.y(d[1]) - 40} )`)
+						.select("#text1").text("Type: " + cat)
 					vis.tooltip.select("#text2").text("Injuries: " + (d[1] - d[0]));
-				});
+				})
+				.on("mouseout", () => {
+					vis.tooltip
+						.style("display", "none")
+						.style("opacity",0);
+				})
+				// .on("mouseover", (event, d) => {
+				// 	vis.tooltip.style("display", null)
+				// })
+				// .on("mouseout", function () {
+				// 	vis.tooltip.style("display", "none");
+				// })
+				// .on("mousemove", (event, d) => {
+				// 	let xPosition = event.pageX - 100;
+				// 	let yPosition = event.pageY - 260;
+				// 	vis.tooltip.style("opacity",1)
+				// 	vis.tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+				// 	vis.tooltip.select("#text1").text("Type: " + cat)
+				// 	vis.tooltip.select("#text2").text("Injuries: " + (d[1] - d[0]));
+				// });
 		})
 
 		// Add one dot in the legend for each name.
@@ -205,7 +227,7 @@ class StackedBar {
 
 		// Call axis functions with the new domain
 		vis.svg.select(".x-axis").call(vis.xAxis);
-		vis.svg.select(".y-axis").call(vis.yAxis);
+		vis.svg.select(".y-axis").transition().duration(500).call(vis.yAxis);
 
 		// Prep the tooltip bits, initial display is hidden
 		vis.tooltip = vis.svg.append("g")
@@ -239,8 +261,6 @@ class StackedBar {
 		vis.selection = selection;
 		// Filter data accordingly without changing the original data
 		vis.displayData = vis.data.filter(d => (vis.selection === "All") ? true : d.injury === vis.selection);
-		console.log(vis.data)
-		console.log(vis.displayData)
 		// Update the visualization
 		vis.wrangleData();
 	}

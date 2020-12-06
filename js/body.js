@@ -19,7 +19,7 @@ class bodyparts {
         // Categories and years based on dataset
         this.categories = ["Abdomen", "Achilles", "Ankle", "Back", "Biceps", "Calf", "Chest", "Concussion", "Elbow",
             "Fibula", "Finger", "Foot", "Forearm", "Groin", "Hamstring", "Hand", "Heel", "Hip", "Illness", "Knee",
-            "Multiple", "Neck", "Oblique", "Other", "Pectoral", "Quadricep", "Rib", "Shin", "Shoulder",
+            "Multiple Injuries", "Neck", "Oblique", "Other", "Pectoral", "Quadricep", "Rib", "Shin", "Shoulder",
             "Thigh", "Thumb", "Toe", "Tricep", "Wrist"];
         this.years = [2016, 2017, 2018, 2019, 2020];
 
@@ -33,152 +33,28 @@ class bodyparts {
     initVis () {
         let vis = this;
 
-        vis.margina = {top: 40, right: 100, bottom: 40, left: 40};
-        vis.widtha = $("#" + vis.parentElementa).width() - vis.margina.left - vis.margina.right;
-        vis.heighta = $("#" + vis.parentElementa).height() - vis.margina.top - vis.margina.bottom;
 
-        vis.marginb = {top: 40, right: 100, bottom: 40, left: 40};
-        vis.widthb = $("#" + vis.parentElementb).width() - vis.marginb.left - vis.marginb.right;
-        vis.heightb = $("#" + vis.parentElementb).height() - vis.marginb.top - vis.marginb.bottom;
+        vis.widtha = $("#" + vis.parentElementa).width();
+        vis.heighta = $("#" + vis.parentElementa).height();
+
+
 
         // init drawing area
         vis.svga = d3.select("#" + vis.parentElementa).append("svg")
-            .attr("width", vis.widtha + vis.margina.left + vis.margina.right)
-            .attr("height", vis.heighta + vis.margina.top + vis.margina.bottom)
-            .append('g')
-            .attr('transform', `translate (${vis.margina.left}, ${vis.margina.top})`);
+            .attr("width", vis.widtha)
+            .attr("height", vis.heighta );
 
-        vis.svgb = d3.select("#" + vis.parentElementb).append("svg")
-            .attr("width", vis.widthb + vis.marginb.left + vis.marginb.right)
-            .attr("height", vis.heightb + vis.marginb.top + vis.marginb.bottom)
-            .append('g')
-            .attr('transform', `translate (${vis.marginb.left}, ${vis.marginb.top})`);
+        vis.x = d3.scaleLinear()
+            .domain([0,100])
+            .range([0, vis.widtha]);
 
-        vis.head = vis.svga.append("circle")
-            .attr("cx", 85)
-            .attr("cy", 30)
-            .attr("r", 20)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
+        vis.y = d3.scaleLinear()
+            .domain([0,100])
+            .range([0, vis.heighta]);
 
-        vis.neck = vis.svga.append("circle")
-            .attr("cx", 85)
-            .attr("cy", 85)
-            .attr("r", 20)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.chest = vis.svga.append("circle")
-            .attr("cx", 85)
-            .attr("cy", 140)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.pec = vis.svga.append("circle")
-            .attr("cx", 50)
-            .attr("cy", 140)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.shoulder = vis.svga.append("circle")
-            .attr("cx", 150)
-            .attr("cy", 120)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.bicep = vis.svga.append("circle")
-            .attr("cx", 10)
-            .attr("cy", 180)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.rib = vis.svga.append("circle")
-            .attr("cx", 120)
-            .attr("cy", 180)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.elbow = vis.svga.append("circle")
-            .attr("cx", 170)
-            .attr("cy", 220)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.forearm = vis.svga.append("circle")
-            .attr("cx", 3)
-            .attr("cy", 245)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.wrist = vis.svga.append("circle")
-            .attr("cx", 175)
-            .attr("cy", 305)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.hand = vis.svga.append("circle")
-            .attr("cx", -8)
-            .attr("cy", 335)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.groin = vis.svga.append("circle")
-            .attr("cx", 85)
-            .attr("cy", 320)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.hip = vis.svga.append("circle")
-            .attr("cx", 130)
-            .attr("cy", 305)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.thigh = vis.svga.append("circle")
-            .attr("cx", 50)
-            .attr("cy", 375)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.knee = vis.svga.append("circle")
-            .attr("cx", 120)
-            .attr("cy", 450)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.shin = vis.svga.append("circle")
-            .attr("cx", 120)
-            .attr("cy", 520)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.calf = vis.svga.append("circle")
-            .attr("cx", 50)
-            .attr("cy", 500)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
-
-        vis.shin = vis.svga.append("circle")
-            .attr("cx", 115)
-            .attr("cy", 580)
-            .attr("r", 18)
-            .attr("fill", "blue")
-            .attr("opacity", 0.5);
+        vis.r = d3.scaleLinear()
+            .domain([0,2026])
+            .range([10, 30]);
 
         vis.wrangleData();
     }
@@ -191,38 +67,37 @@ class bodyparts {
         let vis = this;
 
         vis.displayData = [];
-        vis.usedCats = new Set();
 
-        vis.years.forEach(year => {
-            let temp = {"year": year};
-            vis.categories.forEach(category => temp[category] = 0)
-            vis.displayData.push(temp);
-        })
+        // vis.filtered = vis.data.filter((d)=>
+        //     {if (d.year == 2020) {return d};}
+        // )
 
-        vis.data.forEach(d => {
-            vis.displayData[d.year - 2016][d.injury]++;
-        })
+        vis.rollyear = d3.rollup(vis.data, v => v.length, d => d.year, d => d.injury);
+        vis.roll = d3.rollup(vis.data, v => v.length, d => d.injury);
 
-        vis.displayData.forEach(yearData => {
-            vis.categories.forEach(category => {
-                if (yearData[category] < 100) {
-                    yearData["Other"] += yearData[category]
-                    yearData[category] = 0
-                }
-                else {
-                    vis.usedCats.add(category)
-                }
-            })
-        })
 
-        vis.usedCats = Array.from(vis.usedCats)
-        console.log(vis.usedCats)
-        console.log(vis.displayData);
-
-        vis.stackData = d3.stack()
-            .keys(vis.categories)(vis.displayData)
-
-        console.log(vis.stackData)
+        vis.structure = [
+            {name: "head", x: 50, y: 4, injuries: ["Concussion"], number: [vis.roll.get("Concussion")]},
+            {name: "neck", x: 50, y: 13, injuries: ["Neck"], number: [vis.roll.get("Neck")]},
+            {name: "chest/back", x: 50, y: 21, injuries: ["Chest", "Back"], number: [vis.roll.get("Chest"), vis.roll.get("Back")]},
+            {name: "pec", x: 35, y: 21, injuries: ["Pectoral"], number: [vis.roll.get("Pectoral")]},
+            {name: "shoulder", x: 75, y: 19, injuries: ["Shoulder"], number: [vis.roll.get("Shoulder")]},
+            {name: "upperarm", x: 20, y: 30, injuries: ["Biceps", "Tricep"], number: [vis.roll.get("Biceps"), vis.roll.get("Tricep")]},
+            {name: "elbow", x: 83, y: 35, injuries: ["Elbow"], number: [vis.roll.get("Elbow")]},
+            {name: "forearm", x: 16, y: 40, injuries: ["Forearm"], number: [vis.roll.get("Forearm")]},
+            {name: "rib", x: 65, y: 30, injuries: ["Rib"], number: [vis.roll.get("Rib")]},
+            {name: "ab", x: 50, y: 36, injuries: ["Abdomen"], number: [vis.roll.get("Abdomen")]},
+            {name: "oblique", x: 35, y: 36, injuries: ["Oblique"], number: [vis.roll.get("Oblique")]},
+            {name: "wrist", x: 86, y: 48, injuries: ["Wrist"], number: [vis.roll.get("Wrist")]},
+            {name: "hip", x: 67, y: 48, injuries: ["Hip"], number: [vis.roll.get("Hip")]},
+            {name: "knee", x: 64, y: 70, injuries: ["Knee"], number: [vis.roll.get("Knee")]},
+            {name: "groin", x: 50, y: 50, injuries: ["Groin"], number: [vis.roll.get("Groin")]},
+            {name: "lowerleg", x: 37, y: 79, injuries: ["Shin", "Calf"], number: [vis.roll.get("Shin"), vis.roll.get("Calf")]},
+            {name: "upperleg", x: 37, y: 60, injuries: ["Thigh", "Hamstring", "Quadricep"], number: [vis.roll.get("Thigh"), vis.roll.get("Hamstring"), vis.roll.get("Quadricep")]},
+            {name: "ankle", x: 62, y: 91, injuries: ["Ankle", "Achilles"], number: [vis.roll.get("Ankle"), vis.roll.get("Achilles")]},
+            {name: "hand", x: 12, y: 52, injuries: ["Hand", "Finger", "Thumb"], number: [vis.roll.get("Hand"), vis.roll.get("Finger"), vis.roll.get("Thumb")]},
+            {name: "foot", x: 37, y: 97, injuries: ["Foot", "Toe", "Heel"], number: [vis.roll.get("Foot"), vis.roll.get("Toe"), vis.roll.get("Heel")]}
+        ]
 
         // Update the visualization
         vis.updateVis();
@@ -230,5 +105,35 @@ class bodyparts {
 
     updateVis() {
         let vis = this;
+
+        vis.structure.forEach(row => {
+            vis.svga.append("circle")
+                .attr("cx", vis.x(row.x))
+                .attr("cy", vis.y(row.y))
+                .attr("r", vis.r(row.number.reduce(function(a, b){
+                    return a + b;
+                }, 0)))
+                .attr("fill", "blue")
+                .attr("stroke", "black")
+                .attr("stroke-width", 3)
+                .attr("opacity", 0.5)
+                .attr("class", "bodybubble")
+                .on("click", d => {
+                    d3.select("#toprow").html(`<th scope="col">Year</th>`)
+                    row.injuries.forEach(injury => {
+                        d3.select("#toprow").append("th").text(injury);
+                    })
+                    d3.select("#toprow").append("th").text("Total")
+                    for(let i = 2016; i < 2021; i++){
+                        d3.select("#year" + i).html(`<th scope="row">${i}</th>`)
+                        let acc = 0;
+                        row.injuries.forEach(injury => {
+                            d3.select("#year" + i).append("td").text(vis.rollyear.get(i).get(injury));
+                            acc += vis.rollyear.get(i).get(injury)
+                        })
+                        d3.select("#year" + i).append("th").text(acc)
+                    }
+                });
+        })
     }
 }

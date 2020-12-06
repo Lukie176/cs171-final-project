@@ -1,44 +1,142 @@
 body {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+}
+
+h1, h2 {
+    font-weight: 300;
 }
 
 h1 {
-    font-weight: 100;
     font-size: 30px;
 }
 
 h2 {
-    font-weight: 100;
     font-size: 25px;
 }
 
-.title {
-    padding-left: 30%
+div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+
+.title {
+    width: fit-content;
+    margin: auto;
+    padding: 30px;
+}
+
+.vis {
+    margin: 50px;
+    padding: 25px;
+}
+
+#bodyDiv {
+    align-items: center;
+}
+
+#bodyDiv p {
+    margin-left: 50px;
+}
+
+.text {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    font-size: 25px;
+}
+
+.transparent {
+    background-color: rgba(255,255,255,0.9);
+    border: 5px solid #333333;
+}
+
+#text1Div {
+    background-image: url('../img/text1-background.jpg');
+}
+
+#text2Div {
+    background-image: url('../img/text2-background.webp');
+}
+
+#text3Div {
+    background-image: url('../img/text3-background.jpg');
+}
+
+#text4Div {
+    background-image: url('../img/text4-background.jpg');
+}
+
+#text5Div {
+    background-image: url('../img/text5-background.jpg');
+}
+
+#text6Div {
+    background-image: url('../img/text6-background.jpg');
+}
+
+.visBackground {
+    background-image: url('../img/vis-background.jpg');
+}
+
 #stacked-bar {
     width: 100%;
     height: 600px;
 }
 
-#positionDiv {
-    width: 100%;
-    height: 700px;
+#stacked-bar-sidebar {
+    align-self: center;
 }
 
-.background{
-    background-image: url("../img/colossaltitan.jpg");
+#body{
+    background-image: url("../img/colossaltitan.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100%;
+    background-size: 100% 100%;
+    height: 70vh;
     width: 250px;
 }
 
-#stacked-bar-sidebar {
-    align-self: center;
-    text-align: center
+.bodybubble{
+    cursor: pointer;
 }
+#positionText {
+    width: 100%;
+    padding-left: 40px
+}
+#positionDiv {
+    width: 100%;
+    height: 600px;
+}
+
 #pos-line-chart, #pos-bar-chart {
     height: 50%;
     width: 100%;
 }
+
+.posCirc, .posLabels {
+    cursor: pointer;
+}
+
+#mapVis p {
+    width: 65%;
+    margin: auto;
+}
+
+.tooltip-map {
+    position: absolute;
+    height: auto;
+    text-align: left;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+path:hover {
+    fill-opacity: .7;
+}
+

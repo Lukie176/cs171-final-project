@@ -18,7 +18,7 @@ class LineChart {
             "Multiple", "Neck", "Oblique", "Other", "Pectoral", "Quadricep", "Rib", "Shin", "Shoulder",
             "Thigh", "Thumb", "Toe", "Tricep", "Wrist"];
         this.years = [2016, 2017, 2018, 2019, 2020];
-        this.positions = ["DB", "DE", "DT", "LB", "WR", "TE", "OT", "OG", "C", "QB", "RB", "K", "P"]
+        this.positions = ["DB", "DE", "DT", "LB", "WR", "TE", "OT", "OG", "C", "QB", "RB", "K", "P"];
         this.posNames = {DB: "Defensive Backs", DE: "Defensive Ends", DT: "Defensive Tackles", LB: "Linebackers",
                          WR: "Wide Receivers", TE: "Tight Ends", OT: "Offensive Tackles", OG: "Offensive Guards",
                          C: "Centers", QB: "Quarterbacks", RB: "Running Backs", K: "Kickers", P: "Punters"};
@@ -32,7 +32,7 @@ class LineChart {
     initVis() {
         let vis = this;
 
-        vis.margin = {top: 60, right: 40, bottom: 40, left: 40};
+        vis.margin = {top: 60, right: 40, bottom: 40, left: 60};
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
         vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
@@ -49,8 +49,19 @@ class LineChart {
             .append('text')
             .attr('transform', `translate(${vis.width / 2}, 0)`)
             .attr('text-anchor', 'middle')
-            .text("Number of Entries on Injury Report for 2020 by Week");
-
+            .text("Injuries per Position in 2020 by Week");
+        vis.svg
+            .append('text')
+            .attr('class', 'title bar-title')
+            .attr('transform', `translate(${(vis.width  - vis.margin.right) / 2}, ${vis.height + 40})`)
+            .attr('text-anchor', 'middle')
+            .text('Week');
+        vis.svg
+            .append('text')
+            .attr('class', 'title bar-title')
+            .attr('text-anchor', 'middle')
+            .attr('transform', `translate(-40, ${vis.height / 2}) rotate(270)`)
+            .text('Appearances on Injury Report');
         // Scales and axes
         vis.x = d3.scaleLinear()
             .domain([1, 9])
@@ -60,6 +71,7 @@ class LineChart {
             .range([vis.height, 0])
 
         vis.color = d3.scaleOrdinal()
+            .domain(vis.positions)
             .range(["#d4ad3f",
                 "#757bd5",
                 "#62bd5d",
@@ -98,17 +110,13 @@ class LineChart {
 
         vis.yearData = Object.fromEntries(yearData);
 
-        console.log(vis.yearData);
-
         // Update the visualization
         vis.updateVis();
     }
 
     updateVis() {
         let vis = this;
-        console.log(vis.positions)
         vis.positions.forEach((pos) => {
-            console.log(pos)
             vis.svg.append("path").datum(vis.yearData[pos])
                 .attr("class", "pos-line-" + pos)
                 .attr("fill", "none")
@@ -116,7 +124,6 @@ class LineChart {
                 .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(d => {
-                        console.log(d);
                         return vis.x(d[0])
                     })
                     .y(d => vis.y(d[1]))
@@ -131,14 +138,13 @@ class LineChart {
         let vis = this;
 
         vis.positions.forEach((pos) => {
-            console.log(pos)
             vis.svg.selectAll(".pos-line-" + pos)
                 .attr("opacity", (category === pos || category === "ALL") ? 1 : 0.2)
         });
         if (category === "ALL") {
-            vis.title.text("Number of Entries on Injury Report for 2020 by Week");
+            vis.title.text("Injuries per Position in 2020 by Week");
         } else {
-            vis.title.text("Number of Times " + vis.posNames[category] + " are on Injury Reports for 2020 by Week")
+            vis.title.text("Occurances of " + vis.posNames[category] + " on 2020 Injury Reports by Week")
         }
     }
 }
